@@ -13,7 +13,9 @@ need to include from `<stdlib.h>`
 ## Tranform char to other data type
 
 using ato\_
+
 **Warning if cannot change to that data type it will return 0 and exit function (not execute after the wrong one)**
+
 `atoi()` to change char array to integer
 
 `atof()` to change char array to double
