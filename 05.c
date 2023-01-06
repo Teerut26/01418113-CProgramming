@@ -8,18 +8,21 @@ int main()
     int half = height / 2;
     for (i = 0; i < height; i++)
     {
-        if (i <= half)
+
+        int size;
+        if (i < half)
+            size = i;
+        else
+            size = height - i - 1;
+        for (j = 0; j <= size; j++)
         {
-            for (j = 0; j <= i; j++)
+            if (j % 2)
             {
-                if (j % 2)
-                {
-                    printf("x");
-                }
-                else
-                {
-                    printf("-");
-                }
+                printf("x");
+            }
+            else
+            {
+                printf("-");
             }
         }
 
