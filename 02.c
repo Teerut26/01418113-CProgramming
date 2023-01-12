@@ -1,22 +1,39 @@
 #include <stdio.h>
+#include <math.h>
 
 int main()
 {
-    int n;
-    long double result = 0.0000000000;
+    int n, a, b;
+    int ans[3] = {0, 0, 0};
     scanf("%d", &n);
-    for (int i = 0; i < n; i++)
+
+    for (b = 1; b <= n; b++)
     {
-        long double divide = 2 * i + 1;
-        if (i % 2)
+
+        for (a = 1; a <= b; a++)
         {
-            result -= 4 / divide;
-        }
-        else
-        {
-            result += 4 / divide;
+            int c = n - (a + b);
+            if (c > 0)
+            {
+                if ((a * a) + (b * b) == (c * c))
+                {
+                    ans[0] = a;
+                    ans[1] = b;
+                    ans[2] = c;
+                    b = n;
+                    break;
+                }
+            }
         }
     }
-    printf("%.10Lf", result);
+
+    if (ans[0] != 0)
+    {
+        printf("(%d, %d, %d)", ans[0], ans[1], ans[2]);
+    }
+    else
+    {
+        printf("No triple found.");
+    }
     return 0;
 }
